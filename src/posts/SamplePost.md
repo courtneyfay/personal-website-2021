@@ -1,6 +1,7 @@
 ---
 title: My First Post, Yo!
 date: Jul 6, 2021
+tags: [cat, bird]
 ---
 
 # Basics of Markdown
