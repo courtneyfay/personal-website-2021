@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node public/getPosts.js"
+    "server": "node public/main.js"
   },
   "eslintConfig": {
     "extends": [
