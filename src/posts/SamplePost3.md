@@ -1,9 +1,7 @@
----
-title: My Third Post, Yo!
-date: Jul 19, 2021
-tags: [dog, cat, bird]
----
+# My Third Post, Yo!
 
-# Third third thid third
+Jul 19, 2021
+
+## Third third thid third
 
 "Just remember, you are going to die"

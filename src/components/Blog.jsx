@@ -1,30 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import SectionHeader from './SectionHeader';
-import fetchPosts from '../fetchPosts';
+import ReactMarkdown from 'react-markdown';
+
+const importAll = (r) => r.keys().map(r);
+const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
+    .sort()
+    .reverse();
 
 const Blog = () => {
-    const [posts, setPosts] = useState([]);
-    const [isLoading, setLoading] = useState(false);
+    const [posts, setPosts] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
-    console.log('posts', posts)
-    
     useEffect(() => {
-        const getEm = async () => {
-          try {
-            setLoading(true);
-            const posts = fetchPosts();
-            console.log('posts in use effect', posts);
-            setPosts(posts);
-            setLoading(false);
-          } catch (error) {
-            setLoading(false);
-          }
+        const getPosts = async () => {
+            setIsLoading(true);
+            const postData = await Promise.all(markdownFiles.map(async (file, index) => {
+                const text = await fetch(file.default).then(res => res.text());
+                return {
+                    id: index + 1,
+                    text,
+                };
+            }));
+            setPosts(postData)
+            setIsLoading(false);
         }
-    
-        if (!posts || posts.length === 0) {
-            getEm();
-        }
-      }, [posts]);
+        if (!posts) getPosts()
+    }, [posts]);
 
     return (
         <>
@@ -32,18 +33,9 @@ const Blog = () => {
                 text='blog'
             />
             {isLoading && <span>...</span>}
-            {/* {posts && posts.map(post => {
-                return (
-                    <>
-                        <div>{post.title}</div>
-                        <div>{post.id}</div>
-                        <div>{post.date}</div>
-                        <div>{post.tags.toString()}</div>
-                        <div>{post.content}</div>
-                    </>
-                )
-            })
-            } */}
+            {posts && posts.map(post => {
+                return <ReactMarkdown key={post.id} children={post.text} />
+            })}
         </>
     )
 };
