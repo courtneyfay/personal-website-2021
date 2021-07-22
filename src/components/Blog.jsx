@@ -8,12 +8,7 @@ const PostWrapper = styled.div`
     margin: 50px;
 `;
 
-const importAll = (r) => r.keys().map(r);
-const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
-    .sort()
-    .reverse();
-
-const Blog = () => {
+const Blog = ({markdownFiles}) => {
     const [posts, setPosts] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -27,11 +22,11 @@ const Blog = () => {
                     text,
                 };
             }));
-            setPosts(postData)
+            setPosts(postData);
             setIsLoading(false);
         }
-        if (!posts) getPosts()
-    }, [posts]);
+        if (!posts && markdownFiles.length > 0) getPosts();
+    }, [posts, markdownFiles]);
 
     return (
         <>
@@ -41,8 +36,8 @@ const Blog = () => {
             {isLoading && <span>...</span>}
             {posts && posts.map(post => {
                 return (
-                    <PostWrapper>
-                        <ReactMarkdown key={post.id} children={post.text} />
+                    <PostWrapper key={post.id}>
+                        <ReactMarkdown children={post.text} />
                     </PostWrapper>
                 )
             })}

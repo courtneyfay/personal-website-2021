@@ -5,6 +5,12 @@ import Blog from './components/Blog';
 import HeroImage from './components/HeroImage';
 
 function App() {
+  // using webpack file system to grab markdown files for blog posts
+  const importAll = (r) => r.keys().map(r);
+  const markdownFiles = importAll(require.context('./posts', false, /\.md$/))
+    .sort()
+    .reverse();
+
   return (
     <div>
       <header>
@@ -13,7 +19,7 @@ function App() {
       </header>
       <main>
         <Skills />
-        <Blog />
+        <Blog markdownFiles={markdownFiles} />
       </main>
       <footer>
         <Connect />
