@@ -29,7 +29,7 @@ const HeroImage = () => {
         <HeroContainer>
             <Text>Hey! My name is</Text>
             <Name>Courtney Fay</Name>
-            <Text>VR Developer in Denver, CO</Text>
+            <Text>Unity Developer in Denver, CO</Text>
         </HeroContainer>
     );
 };
