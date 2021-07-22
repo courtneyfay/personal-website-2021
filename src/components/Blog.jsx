@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SectionHeader from './SectionHeader';
 import ReactMarkdown from 'react-markdown';
+import styled from 'styled-components';
+
+const PostWrapper = styled.div`
+    background-color: hotpink;
+    margin: 50px;
+`;
 
 const importAll = (r) => r.keys().map(r);
 const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
@@ -34,7 +40,11 @@ const Blog = () => {
             />
             {isLoading && <span>...</span>}
             {posts && posts.map(post => {
-                return <ReactMarkdown key={post.id} children={post.text} />
+                return (
+                    <PostWrapper>
+                        <ReactMarkdown key={post.id} children={post.text} />
+                    </PostWrapper>
+                )
             })}
         </>
     )
