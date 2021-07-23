@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/personal-website-2021/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/personal-website-2021/static/js/main.9e4a6026.chunk.js",
+    "main.js.map": "/personal-website-2021/static/js/main.9e4a6026.chunk.js.map",
+    "runtime-main.js": "/personal-website-2021/static/js/runtime-main.9531efbc.js",
+    "runtime-main.js.map": "/personal-website-2021/static/js/runtime-main.9531efbc.js.map",
+    "static/js/2.d863d5f7.chunk.js": "/personal-website-2021/static/js/2.d863d5f7.chunk.js",
+    "static/js/2.d863d5f7.chunk.js.map": "/personal-website-2021/static/js/2.d863d5f7.chunk.js.map",
+    "static/js/3.3435b58e.chunk.js": "/personal-website-2021/static/js/3.3435b58e.chunk.js",
+    "static/js/3.3435b58e.chunk.js.map": "/personal-website-2021/static/js/3.3435b58e.chunk.js.map",
+    "index.html": "/personal-website-2021/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/personal-website-2021/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.d863d5f7.chunk.js.LICENSE.txt": "/personal-website-2021/static/js/2.d863d5f7.chunk.js.LICENSE.txt",
+    "static/media/Courtney Fay - Frontend Web Developer - Resume.2c27008a.pdf": "/personal-website-2021/static/media/Courtney Fay - Frontend Web Developer - Resume.2c27008a.pdf",
+    "static/media/SamplePost.md": "/personal-website-2021/static/media/SamplePost.d5789d48.md",
+    "static/media/SamplePost2.md": "/personal-website-2021/static/media/SamplePost2.95aedd89.md",
+    "static/media/SamplePost3.md": "/personal-website-2021/static/media/SamplePost3.ebbbf8e1.md",
+    "static/media/SamplePost4.md": "/personal-website-2021/static/media/SamplePost4.9ea95f2f.md"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9531efbc.js",
+    "static/js/2.d863d5f7.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.9e4a6026.chunk.js"
+  ]
+}
