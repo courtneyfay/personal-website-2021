@@ -15,8 +15,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This job both tests and builds the app
-  test_and_build:
+  # This job tests, builds and deploys the app to staging
+  test_and_deploy:
     name: Test and build the app
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -30,20 +30,7 @@ jobs:
         run: yarn test
       - name: Build project
         run: yarn build
-  
-  staging_deploy:
-    # This job deploys to the staging environment
-    name: Deploy to staging site on gh-pages
-        # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn
       - name: Run deploy script
         run: |
           git config user.name ${{ secrets.LOGIN_NAME }} && git config user.email ${{ secrets.LOGIN_EMAIL }}
           yarn staging-deploy
-
