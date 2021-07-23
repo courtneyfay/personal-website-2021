@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
 const PostWrapper = styled.div`
-    background-color: hotpink;
+    background-color: lightblue;
     margin: 50px;
 `;
 

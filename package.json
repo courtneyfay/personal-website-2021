@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.14",
-    "@types/styled-components": "^5.1.11"
+    "@types/styled-components": "^5.1.11",
+    "execa": "^5.1.1"
   }
 }
