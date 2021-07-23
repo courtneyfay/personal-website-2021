@@ -40,6 +40,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn
       - name: Run deploy script
         run: |
           git config user.name ${{ secrets.LOGIN_NAME }} && git config user.email ${{ secrets.LOGIN_EMAIL }}
