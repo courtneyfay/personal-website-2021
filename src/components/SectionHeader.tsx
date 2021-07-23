@@ -7,8 +7,12 @@ const Header = styled.h2`
     text-align: center;
 `;
 
-const SectionHeader = (props) => {
-    return <Header id={props.text}>{ props.text }</Header>
+interface Props {
+    text: string
+}
+
+const SectionHeader = ({ text }: Props) => {
+    return <Header id={text}>{ text }</Header>
 }
 
 export default SectionHeader;

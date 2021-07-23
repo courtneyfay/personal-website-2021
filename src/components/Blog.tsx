@@ -8,8 +8,21 @@ const PostWrapper = styled.div`
     margin: 50px;
 `;
 
-const Blog = ({markdownFiles}) => {
-    const [posts, setPosts] = useState('');
+interface MarkdownFileType {
+    default: string
+}
+
+interface PostDataType {
+    id: number
+    text: string
+}
+
+interface Props {
+    markdownFiles: MarkdownFileType[]
+}
+
+const Blog = ({markdownFiles}: Props) => {
+    const [posts, setPosts] = useState<PostDataType[]>();
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
