@@ -7,7 +7,7 @@ import HeroImage from './components/HeroImage';
 function App() {
   // using webpack file system to grab markdown files for blog posts
   const importAll = (r) => r.keys().map(r);
-  const markdownFiles = importAll(require.context('./posts', false, /\.md$/))
+  const markdownFiles = importAll(require.context('./posts', false, /\.js$/))
     .sort()
     .reverse();
 
